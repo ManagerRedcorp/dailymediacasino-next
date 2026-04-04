@@ -1,0 +1,682 @@
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+/* ═══════════════════════════════════════════════════════════════════════
+   DARK CASINO THEME  –  Midnight Navy + Casino Gold + Electric Accents
+   ═══════════════════════════════════════════════════════════════════════
+   Contrast audit (WCAG):
+   · Foreground on background     ≈ 18:1  AAA ✓
+   · Primary (gold) on background ≈ 14:1  AAA ✓
+   · Muted foreground on bg       ≈  7:1  AA  ✓
+   · Destructive on bg            ≈  6:1  AA  ✓
+   · Primary-foreground (dark) on gold ≈ 14:1 AAA ✓
+   ═══════════════════════════════════════════════════════════════════════ */
+
+@layer base {
+  :root {
+    /* ── Surfaces (deep → dark → card → subtle) ───────────────────── */
+    --background: 222 38% 8%;          /* #0c1424  midnight navy canvas   */
+    --foreground: 40 18% 94%;          /* #f0ece0  warm white text         */
+
+    --card: 222 32% 12%;               /* #141e30  raised card surface     */
+    --card-foreground: 40 18% 94%;
+
+    --popover: 222 30% 14%;            /* #192236  dropdown / tooltip bg   */
+    --popover-foreground: 40 18% 94%;
+
+    /* ── Brand primary: vivid casino gold ─────────────────────────── */
+    --primary: 42 96% 52%;             /* #f9b81c  bright gold             */
+    --primary-foreground: 222 38% 8%;  /* dark navy text ON gold ~14:1 ✓  */
+
+    /* ── Secondary: dark navy surface ─────────────────────────────── */
+    --secondary: 222 28% 16%;          /* #1a2540  subtle raised layer     */
+    --secondary-foreground: 40 15% 88%; /* slightly dimmed warm white      */
+
+    /* ── Muted ─────────────────────────────────────────────────────── */
+    --muted: 222 25% 18%;              /* #1e2846  lowest contrast surface */
+    --muted-foreground: 220 14% 62%;   /* #8a9ab8  readable mid tone ~7:1 ✓*/
+
+    /* ── Accent: vivid orange-red (urgency / badges) ──────────────── */
+    --accent: 14 90% 58%;              /* #f05a28  vivid orange-red        */
+    --accent-foreground: 0 0% 100%;    /* white on orange-red ~5:1 ✓      */
+
+    /* ── Status ────────────────────────────────────────────────────── */
+    --destructive: 350 85% 58%;        /* #f03052  vivid red               */
+    --destructive-foreground: 0 0% 100%;
+
+    /* ── Structural ─────────────────────────────────────────────────── */
+    --border: 222 22% 22%;             /* #27334e  subtle dark divider     */
+    --input: 222 25% 14%;              /* #141e36  inset form field        */
+    --ring: 42 96% 52%;                /* gold focus ring                  */
+    --radius: 0.75rem;
+
+    /*
+     * CASINO TOKEN MAP
+     *
+     * casino-gold    → vivid bright gold   (headlines, scores, stars)
+     * casino-purple  → electric purple     (animated borders, blobs)
+     * casino-magenta → hot pink/magenta    (animated borders, energy)
+     * casino-cyan    → electric neon cyan  (icons, progress, accents)
+     * casino-green   → bright casino green (compliance, CTA support)
+     * casino-dark    → raised dark surface (= card)
+     * casino-darker  → deepest surface     (footer, deep panels)
+     */
+    --casino-gold: 42 96% 55%;         /* #fbc424  vivid gold ~14:1 on bg ✓*/
+    --casino-purple: 265 80% 64%;      /* #7643f8  electric purple          */
+    --casino-magenta: 320 80% 60%;     /* #e03596  hot pink/magenta         */
+    --casino-cyan: 192 88% 52%;        /* #10c4e2  electric cyan            */
+    --casino-green: 142 65% 45%;       /* #28c060  bright casino green      */
+    --casino-dark: 222 32% 12%;        /* = --card                          */
+    --casino-darker: 222 42% 5%;       /* #07090f  deepest footer bg        */
+
+    --sidebar-background: 222 32% 12%;
+    --sidebar-foreground: 40 18% 94%;
+    --sidebar-primary: 42 96% 52%;
+    --sidebar-primary-foreground: 222 38% 8%;
+    --sidebar-accent: 222 28% 16%;
+    --sidebar-accent-foreground: 40 15% 88%;
+    --sidebar-border: 222 22% 22%;
+    --sidebar-ring: 42 96% 52%;
+  }
+
+  /* Light mode override (optional — available via .light class if needed) */
+  .light {
+    --background: 175 18% 98%;
+    --foreground: 200 25% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 200 25% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 25% 10%;
+    --primary: 172 65% 26%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 172 28% 92%;
+    --secondary-foreground: 172 45% 18%;
+    --muted: 172 16% 93%;
+    --muted-foreground: 172 18% 36%;
+    --accent: 36 80% 48%;
+    --accent-foreground: 25 70% 12%;
+    --destructive: 0 72% 42%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 172 16% 86%;
+    --input: 172 16% 86%;
+    --ring: 172 65% 26%;
+    --casino-gold: 40 72% 36%;
+    --casino-purple: 172 65% 26%;
+    --casino-magenta: 36 68% 34%;
+    --casino-cyan: 183 58% 34%;
+    --casino-green: 158 55% 28%;
+    --casino-dark: 172 20% 94%;
+    --casino-darker: 172 55% 11%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 200 25% 10%;
+    --sidebar-primary: 172 65% 26%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 172 28% 92%;
+    --sidebar-accent-foreground: 172 45% 18%;
+    --sidebar-border: 172 16% 86%;
+    --sidebar-ring: 172 65% 26%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  /* Display font for all H1 headlines */
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.08em;
+  }
+}
+
+@layer utilities {
+  /*
+   * GRADIENT UTILITIES
+   *
+   * gradient-primary  → gold → warm orange  (CTA buttons, rank badges)
+   *   Both stops are mid-high luminance, paired with --primary-foreground
+   *   (dark navy) text for ~14:1 contrast ✓
+   *
+   * gradient-accent   → electric cyan → electric purple (decorative panels)
+   * gradient-gold     → gold → deep amber                (premium accents)
+   * gradient-dark     → card → deepest footer             (section fills)
+   */
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(42 96% 52%), hsl(22 92% 50%));
+  }
+
+  .gradient-gold {
+    background: linear-gradient(135deg, hsl(42 96% 55%), hsl(42 80% 40%));
+  }
+
+  .gradient-accent {
+    background: linear-gradient(135deg, hsl(var(--casino-cyan)), hsl(var(--casino-purple)));
+  }
+
+  .gradient-dark {
+    background: linear-gradient(180deg, hsl(var(--casino-dark)), hsl(var(--casino-darker)));
+  }
+
+  /* GLOW EFFECTS — gorgeous on dark background */
+  .glow-primary {
+    box-shadow:
+      0 0 25px hsl(42 96% 52% / 0.50),
+      0 0 55px hsl(42 96% 52% / 0.25);
+  }
+
+  .glow-gold {
+    box-shadow:
+      0 0 20px hsl(var(--casino-gold) / 0.45),
+      0 0 45px hsl(var(--casino-gold) / 0.22);
+  }
+
+  .glow-accent {
+    box-shadow:
+      0 0 20px hsl(var(--casino-cyan) / 0.40),
+      0 0 45px hsl(var(--casino-cyan) / 0.20);
+  }
+
+  /*
+   * TEXT GRADIENTS
+   *
+   * text-gradient-primary → vivid gold → vivid orange
+   *   Used on large display headings on dark bg.
+   *   Both stops bright, highly legible against midnight navy ✓
+   *
+   * text-gradient-gold    → bright gold → deep amber
+   */
+  .text-gradient-primary {
+    background: linear-gradient(135deg, hsl(42 100% 64%), hsl(22 100% 58%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(42 96% 60%), hsl(36 90% 44%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /*
+   * GRADIENT DIVIDERS
+   *
+   * .gd        → full-width 1px line, gold→purple (section breaks, header, footer)
+   * .gd-accent → short 2px underline for H2 section headings
+   */
+  .gd {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(var(--casino-gold) / 0.60) 25%,
+      hsl(var(--casino-purple) / 0.60) 75%,
+      transparent 100%
+    );
+    flex-shrink: 0;
+  }
+
+  /*
+   * INFO CARD — enhanced content cards used in editorial sections
+   * Gold micro-gradient bg + left accent bar + subtle gold border
+   */
+  .info-card {
+    position: relative;
+    border-radius: 1rem;
+    border: 1px solid hsl(var(--casino-gold) / 0.35);
+    background:
+      radial-gradient(ellipse 70% 55% at 0% 0%, hsl(var(--casino-gold) / 0.20) 0%, transparent 65%),
+      radial-gradient(ellipse 55% 50% at 100% 100%, hsl(var(--casino-purple) / 0.16) 0%, transparent 60%),
+      hsl(var(--secondary));
+    overflow: hidden;
+  }
+  .info-card::before {
+    content: "";
+    position: absolute;
+    inset-y: 0;
+    left: 0;
+    width: 4px;
+    background: linear-gradient(180deg, hsl(var(--casino-gold)), hsl(var(--casino-purple) / 0.80));
+    border-radius: 0 4px 4px 0;
+  }
+  .info-card:hover {
+    border-color: hsl(var(--casino-gold) / 0.55);
+    background:
+      radial-gradient(ellipse 70% 55% at 0% 0%, hsl(var(--casino-gold) / 0.28) 0%, transparent 65%),
+      radial-gradient(ellipse 55% 50% at 100% 100%, hsl(var(--casino-purple) / 0.22) 0%, transparent 60%),
+      hsl(var(--secondary));
+    transition: border-color .18s ease, background .18s ease;
+  }
+
+  .gd-accent {
+    height: 2px;
+    width: 56px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, hsl(var(--casino-gold)), hsl(var(--casino-purple)));
+    margin-bottom: 1.25rem;
+  }
+
+  /* ANIMATIONS */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+    background-size: 200% 100%;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/*
+ * Decorative background pattern
+ * Atmospheric gold / purple / cyan washes at low opacity.
+ * On dark bg these create a rich, layered casino-lighting feel.
+ */
+.casino-pattern {
+  background-image:
+    radial-gradient(circle at 20% 50%, hsl(var(--casino-gold) / 0.07) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, hsl(var(--casino-purple) / 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 40% 80%, hsl(var(--casino-cyan) / 0.05) 0%, transparent 40%);
+}
+
+/* Scrollbar — dark track, gold thumb */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--card));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.40);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.65);
+}
+
+
+/* ── Button light sweep animation ─────────────────────────────────────── */
+.btn-light-sweep {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-light-sweep::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.85) 50%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-repeat: no-repeat;
+  background-position: 0px;
+  background-size: 300%;
+  mix-blend-mode: overlay;
+  opacity: 0.9;
+  animation: btnLight 2s infinite;
+}
+
+@keyframes btnLight {
+  0%   { background-position: -600px; }
+  50%  { background-position: 0px; }
+  100% { background-position: 0px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-light-sweep::after {
+    animation: none;
+  }
+}
+
+
+/* ── Animated ranking card border ─────────────────────────────────────── */
+/*
+ * On dark background the neon border animation is at its best:
+ * hot magenta → electric purple → electric cyan → back to magenta.
+ * The glow ::after creates a stunning ambient halo behind the #1 card.
+ */
+.rank-animated-border {
+  position: relative;
+  border-radius: 26px;
+  padding: 2px;
+  background: transparent;
+  overflow: visible;
+}
+
+.rank-hover-scale {
+  transform-origin: center;
+  transition: transform 220ms ease;
+  will-change: transform;
+}
+
+.rank-hover-scale:hover {
+  transform: scale(1.01);
+}
+
+.rank-hover-scale:active {
+  transform: scale(0.99);
+}
+
+.rank-animated-border.is-active::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    hsl(var(--casino-magenta) / 0),
+    hsl(var(--casino-magenta) / 0.90),
+    hsl(var(--casino-purple) / 0.90),
+    hsl(var(--casino-cyan) / 0.90),
+    hsl(var(--casino-magenta) / 0)
+  );
+  background-size: 300% 100%;
+  animation: rankBorderMove 2.4s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Inner card — semi-transparent dark glass */
+.rank-card-inner {
+  position: relative;
+  z-index: 2;
+  border-radius: 24px;
+  background: hsl(var(--card) / 0.95);
+  border: 1px solid hsl(var(--foreground) / 0.08);
+  backdrop-filter: blur(16px);
+}
+
+/* Neon ambient glow behind the featured card */
+.rank-animated-border.is-active::after {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  border-radius: 44px;
+  background:
+    radial-gradient(circle at 25% 50%, hsl(var(--casino-magenta) / 0.22), transparent 58%),
+    radial-gradient(circle at 75% 50%, hsl(var(--casino-cyan) / 0.20), transparent 58%);
+  filter: blur(22px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes rankBorderMove {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   TopRankingPremium — Sidebar / Modal styles
+   ═══════════════════════════════════════════════════════════════════════ */
+
+        .qo_root{
+          position: fixed;
+          inset: 0;
+          z-index: 2147483000;
+          overflow: hidden;
+        }
+        .qo_backdrop{
+          position: absolute;
+          inset: 0;
+          background: rgba(0,0,0,.68);
+          backdrop-filter: blur(6px);
+          -webkit-backdrop-filter: blur(6px);
+        }
+        .qo_panel{
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 100%;
+          width: min(420px, calc(100vw - 28px));
+          background: #2100a5;
+          border-left: 1px solid rgba(255,255,255,.14);
+          box-shadow: -24px 0 80px rgba(0,0,0,.55);
+          transform: translateX(0);
+          animation: qo_in .28s cubic-bezier(.2,.9,.2,1) both;
+          display: flex;
+          flex-direction: column;
+        }
+        @keyframes qo_in{
+          from { transform: translateX(18px); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+
+        .qo_top{
+          padding: 16px 16px 10px;
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          gap: 10px;
+        }
+
+        .qo_titleBig{
+          color: white;
+          font-size: 18px;
+          font-weight: 950;
+          letter-spacing: -0.02em;
+          line-height: 1.15;
+        }
+        .qo_titleBrand{
+          color: rgba(69,255,50,.98);
+          text-shadow: 0 18px 40px rgba(69,255,50,.12);
+        }
+
+        .qo_close{
+          height: 34px;
+          width: 34px;
+          border-radius: 12px;
+          border: 1px solid rgba(255,255,255,.12);
+          background: rgba(255,255,255,.06);
+          color: rgba(255,255,255,.90);
+          display: grid;
+          place-items: center;
+          cursor: pointer;
+          flex: 0 0 auto;
+        }
+        .qo_close:hover{ background: rgba(255,255,255,.10); }
+
+        .qo_media{
+          padding: 0 16px 12px;
+        }
+        .qo_mediaInner{
+          border-radius: 16px;
+          border: 1px solid rgba(255,255,255,.12);
+          background:
+            radial-gradient(90% 90% at 30% 20%, rgba(217,70,239,.18) 0%, rgba(0,0,0,0) 55%),
+            radial-gradient(80% 80% at 80% 55%, rgba(124,58,237,.14) 0%, rgba(0,0,0,0) 60%),
+            rgba(255,255,255,.04);
+          overflow: hidden;
+          display: block;
+          position: relative;
+        }
+        .qo_mediaInner::after{
+          content:"";
+          position:absolute;
+          inset:0;
+          background: linear-gradient(180deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,.45) 100%);
+          pointer-events:none;
+        }
+        .qo_img{
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          display: block;
+        }
+
+        .qo_scoreRow{
+          margin-top: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+        }
+        .qo_scorePill{
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          border-radius: 999px;
+          padding: 8px 12px;
+          border: 1px solid rgba(255,255,255,.12);
+          background: rgba(0,0,0,.22);
+          color: rgba(255,255,255,.95);
+          font-weight: 900;
+          font-size: 13px;
+        }
+        .qo_scoreSub{
+          font-weight: 800;
+          color: rgba(255,255,255,.70);
+          margin-left: -4px;
+        }
+
+        .qo_section{
+          padding: 12px 16px;
+          border-top: 1px solid rgba(255,255,255,.08);
+        }
+        .qo_offerTitle{
+          color: white;
+          font-weight: 900;
+          font-size: 14px;
+          line-height: 1.25;
+        }
+        .qo_offerSub{
+          margin-top: 4px;
+          color: rgba(255,255,255,.78);
+          font-weight: 800;
+          font-size: 12px;
+        }
+        .qo_sectionTitle{
+          color: rgba(255,255,255,.78);
+          font-size: 11px;
+          font-weight: 900;
+          letter-spacing: .12em;
+          text-transform: uppercase;
+          margin-bottom: 10px;
+        }
+        .qo_facts{
+          display: grid;
+          gap: 10px;
+        }
+        .qo_fact{
+          display: flex;
+          gap: 10px;
+          align-items: flex-start;
+          color: rgba(255,255,255,.82);
+          font-size: 12px;
+          line-height: 1.35;
+        }
+        .qo_dot{
+          margin-top: 6px;
+          height: 6px;
+          width: 6px;
+          border-radius: 999px;
+          background: rgba(69,255,50,.95);
+          box-shadow: 0 12px 28px rgba(69,255,50,.18);
+          flex: 0 0 auto;
+        }
+
+        /* Pros list */
+        .qo_pros{
+          display: grid;
+          gap: 10px;
+        }
+        .qo_pro{
+          display: grid;
+          grid-template-columns: 18px 1fr;
+          gap: 10px;
+          align-items: start;
+          color: rgba(255,255,255,.78);
+          font-size: 12px;
+          line-height: 1.45;
+        }
+        .qo_check{
+          height: 16px;
+          width: 16px;
+          color: rgba(69,255,50,.95);
+          filter: drop-shadow(0 10px 18px rgba(69,255,50,.18));
+          margin-top: 1px;
+        }
+
+        .qo_footer{
+          margin-top: auto;
+          padding: 14px 16px 16px;
+          border-top: 1px solid rgba(255,255,255,.10);
+          background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.30) 60%, rgba(0,0,0,.45) 100%);
+        }
+        .qo_cta{
+          display: inline-flex;
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+          border-radius: 999px;
+          padding: 12px 14px;
+          font-weight: 900;
+          color: black;
+          background: #45FF32;
+          box-shadow: 0 16px 40px rgba(69,255,50,.22);
+          text-decoration: none;
+          transition: transform .15s ease;
+        }
+        .qo_cta:hover{ transform: translateY(-1px); }
+        .qo_disclaimer{
+          margin-top: 10px;
+          text-align: center;
+          font-size: 10px;
+          font-weight: 700;
+          color: rgba(255,255,255,.60);
+          line-height: 1.2;
+        }
+
+            .qo_link{
+              appearance: none;
+              border: none;
+              background: transparent;
+              padding: 0;
+              margin: 0;
+              cursor: pointer;
+              font-size: 12px;
+              font-weight: 800;
+              color: rgba(255, 255, 255, 0.85);
+              text-decoration: underline;
+              text-underline-offset: 3px;
+              opacity: .95;
+              transition: color .15s ease;
+            }
+            .qo_link:hover{
+              color: hsl(42, 96%, 58%);
+            }

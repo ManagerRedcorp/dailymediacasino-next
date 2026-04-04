@@ -1,0 +1,138 @@
+[
+  {
+    "id": 100,
+    "rank": 1,
+    "name": "BetMGM Casino",
+    "logoSrc": "/images/betmgm.webp",
+    "sidebarImageSrc": "/images/betmgm.webp",
+    "offerTitle": "Get up to",
+    "offerSubtitle": "$1,000 Deposit Match",
+    "score": 9.9,
+    "starRating": 5,
+    "features": [
+      "State-licensed and regulated",
+      "Massive game library with exclusives",
+      "Fast and reliable payouts"
+    ],
+    "ctaUrl": "#",
+    "affiliateUrl": "#",
+    "termsText": "21+. New players only. Available in select states. Deposit required. Wagering requirements apply. T&Cs apply. 1-800-GAMBLER.",
+    "specialLabel": "EDITOR'S PICK",
+    "payments": [
+      "visa",
+      "mastercard"
+    ],
+    "expertPros": [
+      "Fully licensed and regulated in multiple US states with a trusted MGM brand reputation",
+      "One of the largest game libraries in the US with exclusive titles and live dealer options",
+      "Fast payouts with multiple withdrawal methods including bank transfer and e-wallets"
+    ],
+    "categories": [
+      "slots",
+      "blackjack",
+      "roulette",
+      "poker",
+      "craps",
+      "baccarat",
+      "live-dealer",
+      "fast-payout",
+      "bonus",
+      "mobile-app"
+    ],
+    "rtgGames": false,
+    "cryptoAccepted": false,
+    "bonusAmount": "$1,000",
+    "gamesCount": "2,000+",
+    "payoutSpeed": "1-3 days"
+  },
+  {
+    "id": 101,
+    "rank": 2,
+    "name": "DraftKings Casino",
+    "logoSrc": "/images/draftkings.webp",
+    "sidebarImageSrc": "/images/draftkings.webp",
+    "offerTitle": "Get up to",
+    "offerSubtitle": "$2,000 Casino Bonus",
+    "score": 9.8,
+    "starRating": 5,
+    "features": [
+      "State-licensed and regulated",
+      "Seamless sportsbook integration",
+      "Top-rated mobile app"
+    ],
+    "ctaUrl": "#",
+    "affiliateUrl": "#",
+    "termsText": "21+. New players only. Available in select states. Deposit required. Wagering requirements apply. T&Cs apply. 1-800-GAMBLER.",
+    "specialLabel": "TRENDING",
+    "payments": [
+      "visa",
+      "mastercard"
+    ],
+    "expertPros": [
+      "Regulated in multiple US states with strong brand trust and industry-leading compliance",
+      "Seamless integration between casino and sportsbook with a unified wallet and rewards program",
+      "Award-winning mobile app with smooth navigation, fast load times, and an excellent user experience"
+    ],
+    "categories": [
+      "slots",
+      "blackjack",
+      "roulette",
+      "poker",
+      "live-dealer",
+      "fast-payout",
+      "bonus",
+      "mobile-app"
+    ],
+    "rtgGames": false,
+    "cryptoAccepted": false,
+    "bonusAmount": "$2,000",
+    "gamesCount": "1,500+",
+    "payoutSpeed": "1-3 days"
+  },
+  {
+    "id": 102,
+    "rank": 3,
+    "name": "Caesars Online Casino",
+    "logoSrc": "/images/caesars.webp",
+    "sidebarImageSrc": "/images/caesars-online-casino-overview-image.webp",
+    "offerTitle": "Get up to",
+    "offerSubtitle": "$1,000 Deposit Match + Bonus Play",
+    "score": 9.7,
+    "starRating": 5,
+    "features": [
+      "State-licensed and regulated",
+      "Caesars Rewards loyalty program",
+      "Premium live dealer experience"
+    ],
+    "ctaUrl": "#",
+    "affiliateUrl": "#",
+    "termsText": "21+. New players only. Available in select states. Deposit required. Wagering requirements apply. T&Cs apply. 1-800-GAMBLER.",
+    "specialLabel": "HOT",
+    "payments": [
+      "visa",
+      "mastercard"
+    ],
+    "expertPros": [
+      "One of the most iconic brands in gambling with a fully state-licensed and regulated online casino",
+      "Caesars Rewards integration lets players earn and redeem points across casino, hotels, and dining",
+      "Premium live dealer tables and a curated game selection from top-tier software providers"
+    ],
+    "categories": [
+      "slots",
+      "blackjack",
+      "roulette",
+      "poker",
+      "craps",
+      "baccarat",
+      "live-dealer",
+      "fast-payout",
+      "bonus",
+      "mobile-app"
+    ],
+    "rtgGames": false,
+    "cryptoAccepted": false,
+    "bonusAmount": "$1,000",
+    "gamesCount": "1,200+",
+    "payoutSpeed": "1-5 days"
+  }
+]

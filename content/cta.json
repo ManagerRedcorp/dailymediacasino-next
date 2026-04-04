@@ -1,0 +1,27 @@
+{
+  "countdown": {
+    "ctaHref": "#",
+    "bgImage": "/images/cta-hero-2.webp",
+    "title": "Join the #1 Online casino in the US",
+    "titleAccent": "and get up to $3000 Welcome bonus + 30 FS",
+    "pros": [
+      "Fast payouts",
+      "Mobile-friendly",
+      "Weekly free rewards"
+    ],
+    "ctaText": "Play now"
+  },
+  "promo": {
+    "bgImageUrl": "/images/bg-cta.webp",
+    "brandLogoUrl": "/images/slotslv.webp",
+    "subtitleText": "Special Offer",
+    "titleMain": "GET UP TO",
+    "titleGreen": "$3000 Welcome bonus + 30 FS",
+    "ctaText": "Get Bonus",
+    "ctaHref": "#",
+    "titleHref": "",
+    "shortTerms": "21+. T&Cs apply. Gamble responsibly.",
+    "fullTerms": "21+. T&Cs apply. Gamble responsibly.",
+    "enableToggle": true
+  }
+}
